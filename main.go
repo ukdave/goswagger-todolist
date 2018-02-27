@@ -30,6 +30,7 @@ func main() {
 	server.Port = *portFlag
 
 	// TODO: Set Handle
+	server.ConfigureAPI()
 
 	// serve API
 	if err := server.Serve(); err != nil {
