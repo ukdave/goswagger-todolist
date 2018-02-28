@@ -47,6 +47,7 @@
                         <th scope="col" style="width: 5rem;">ID</th>
                         <th scope="col">Description</th>
                         <th scope="col" class="text-center" style="width: 8rem;">Completed</th>
+                        <th scope="col" style="width: 5rem;">&nbsp;</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -56,6 +57,7 @@
                         <td class="text-center text-primary" >
                             <i class="far" :class="{ 'fa-check-circle': item.completed, 'fa-circle': !item.completed }"></i>
                         </td>
+                        <td class="text-right"><button class="btn btn-outline-danger btn-xs btn-no-border" @click="deleteItem(item.id)" ><i class="fas fa-trash"></i></button></td>
                     </tr>
                 </tbody>
             </table>
@@ -104,7 +106,7 @@
         <script src="https://use.fontawesome.com/releases/v5.0.7/js/fontawesome.js"></script>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js" integrity="sha256-mpnrJ5DpEZZkwkE1ZgkEQQJW/46CSEh/STrZKOB/qoM=" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.5/lodash.core.min.js" integrity="sha256-/WikzFcmjMZS+es0fni22evPN2lgZh8Dk2XXI/ZFtxM=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.5/lodash.min.js" integrity="sha256-YFhaeQSVBgAFNN5z4I9YRB2jCuqc2nvypz0Q2eQzcx8=" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
         <script src="app.js"></script>
     </body>

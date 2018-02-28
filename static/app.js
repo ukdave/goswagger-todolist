@@ -22,6 +22,13 @@ var myApp = new Vue({
                 self.items = response.data
             });
         },
+        deleteItem: function (itemId) {
+            var self = this;
+            axios.delete('/api/' + itemId).then(function (response) {
+                var idx = _.findIndex(self.items, {id: itemId});
+                self.items.splice(idx, 1);
+            });
+        },
         showAddItemModal: function() {
             this.newItem.description = "";
             this.newItem.completed = false;
