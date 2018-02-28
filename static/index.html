@@ -59,7 +59,37 @@
                     </tr>
                 </tbody>
             </table>
+            <button class="btn btn-outline-success" @click="showAddItemModal"><i class="fas fa-plus"></i> Add</button>
             <button class="btn btn-outline-primary" @click="refreshItems"><i class="fas fa-sync-alt"></i> Refresh</button>
+
+            <div class="modal fade" id="addItemModal" tabindex="-1" role="dialog" aria-labelledby="addItemModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <form @submit.prevent="submitForm">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="addItemModalLabel">Add Item</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <label for="itemDescription">Description</label>
+                                    <input type="text" class="form-control" id="itemDescription" placeholder="Enter description" required v-model="newItem.description" />
+                                </div>
+                                <div class="form-group custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="itemCompleted" v-model="newItem.completed" />
+                                    <label class="custom-control-label" for="itemCompleted">Completed?</label>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary">Save changes</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </main><!-- /.container -->
 
         <!-- Bootstrap core JavaScript
