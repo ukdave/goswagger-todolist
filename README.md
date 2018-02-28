@@ -2,6 +2,9 @@
 
 A To Do List API built with [go-swagger](https://goswagger.io/).
 
+Also includes a basic UI built with [Bootstrap 4](https://getbootstrap.com/)
+and [VueJS](https://vuejs.org/).
+
 ## Dependencies
 
 *   [go](https://golang.org/)
@@ -26,7 +29,12 @@ make swagger
 
 ```shell
 go run main.go --port 3000
+```
+
+```shell
 http :3000/api/
 http :3000/api/ description="Do some stuff" completed:=true
 http :3000/api/ description="Do some more stuff" completed:=false
 ```
+
+Web UI available at <http://localhost:3000/>.
